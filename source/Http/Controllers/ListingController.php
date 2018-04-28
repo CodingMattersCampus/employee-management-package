@@ -22,7 +22,7 @@ final class ListingController extends BaseController
     {
         $branches = Branch::all();
         $roles = Role::all();
-        $errors = ViewErrorBag::all();
+        $errors = new ViewErrorBag;
 
         return \view('office.employee.listing', \compact(['branches', 'roles', 'errors']));
     }
@@ -31,7 +31,7 @@ final class ListingController extends BaseController
     {
         $roles = Role::all();
         $data = $request->post();
-        $errors = ViewErrorBag::all();
+        $errors = new ViewErrorBag;
 
         $employee->first_name       = $data['first_name'];
         $employee->middle_name      = $data['middle_name'];
