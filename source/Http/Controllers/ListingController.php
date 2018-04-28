@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace CodingMatters\EmployeeManagement\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use CodingMatters\EmployeeManagement\Models\Employee;
 use CodingMatters\EmployeeManagement\Models\Branch;
 use CodingMatters\EmployeeManagement\Models\Role;
@@ -17,6 +18,13 @@ use Illuminate\Support\ViewErrorBag;
 final class ListingController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function __construct()
+    {
+        if (! Auth::guard('office')->check) {
+            return \redirect()->route('office.user.profile');
+        }
+    }
 
     public function index() : object
     {
