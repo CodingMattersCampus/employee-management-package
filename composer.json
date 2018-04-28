@@ -39,7 +39,7 @@
         },
         "laravel": {
             "providers": [
-                "CodingMatters\\StoreManagement\\StoreManagementServiceProvider"
+                "CodingMatters\\EmployeeManagement\\EmployeeManagementServiceProvider"
             ]
         }
     },
