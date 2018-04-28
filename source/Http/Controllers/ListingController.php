@@ -21,7 +21,7 @@ final class ListingController extends BaseController
 
     public function __construct()
     {
-        if (! Auth::guard('office')->check) {
+        if (! Auth::guard('office')->check()) {
             return \redirect()->route('office.user.profile');
         }
     }
