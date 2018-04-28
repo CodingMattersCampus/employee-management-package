@@ -12,7 +12,8 @@
     "require": {
         "php": "~7.2.4",
         "nesbot/carbon": "^1.27",
-        "roave/security-advisories": "dev-master"
+        "roave/security-advisories": "dev-master",
+        "illuminate/contracts": "^5.6"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.7",
@@ -39,7 +40,7 @@
         },
         "laravel": {
             "providers": [
-                "CodingMatters\\EmployeeManagement\\EmployeeManagementServiceProvider"
+                "CodingMatters\\EmployeeManagement\\Providers\\EmployeeManagementServiceProvider"
             ]
         }
     },

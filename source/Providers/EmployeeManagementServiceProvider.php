@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace CodingMatters\EmployeeManagement;
+namespace CodingMatters\EmployeeManagement\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
