@@ -17,6 +17,7 @@
     "require-dev": {
         "fzaninotto/faker": "^1.7",
         "mockery/mockery": "^1.0",
+        "orchestra/testbench": "^3.6",
         "phpunit/phpunit": "^7.1",
         "sebastian/phpcpd": "^4.0",
         "zendframework/zend-coding-standard": "^1.0"
