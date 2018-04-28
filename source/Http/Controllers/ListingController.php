@@ -4,14 +4,19 @@ declare(strict_types = 1);
 
 namespace CodingMatters\EmployeeManagement\Http\Controllers;
 
-use App\Models\User\Employee;
-use App\Models\User\Role;
-use App\Models\Office\Branch;
-use App\Http\Requests\Office\Employee\CreateEmployeeRequest;
-use App\Http\Controllers\Controller;
+use CodingMatters\EmployeeManagement\Models\Employee;
+use CodingMatters\EmployeeManagement\Models\Branch;
+use CodingMatters\EmployeeManagement\Models\Role;
+use CodingMatters\EmployeeManagement\Http\Requests\CreateNewEmployeeInformationRequest;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-final class ListingController extends Controller
+final class ListingController extends BaseController
 {
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    
     public function index() : object
     {
         $branches = Branch::all();
@@ -20,7 +25,7 @@ final class ListingController extends Controller
         return \view('office.employee.listing', \compact(['branches', 'roles']));
     }
 
-    public function create(CreateEmployeeRequest $request, Employee $employee) : object
+    public function create(CreateNewEmployeeInformationRequest $request, Employee $employee) : object
     {
         $roles = Role::all();
         $data = $request->post();
