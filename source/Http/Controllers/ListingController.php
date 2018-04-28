@@ -17,7 +17,7 @@ use Illuminate\Support\ViewErrorBag;
 final class ListingController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    
+
     public function index() : object
     {
         $branches = Branch::all();
