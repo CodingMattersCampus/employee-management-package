@@ -12,6 +12,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\ViewErrorBag;
 
 final class ListingController extends BaseController
 {
@@ -21,14 +22,16 @@ final class ListingController extends BaseController
     {
         $branches = Branch::all();
         $roles = Role::all();
+        $errors = ViewErrorBag::all();
 
-        return \view('office.employee.listing', \compact(['branches', 'roles']));
+        return \view('office.employee.listing', \compact(['branches', 'roles', 'errors']));
     }
 
     public function create(CreateNewEmployeeInformationRequest $request, Employee $employee) : object
     {
         $roles = Role::all();
         $data = $request->post();
+        $errors = ViewErrorBag::all();
 
         $employee->first_name       = $data['first_name'];
         $employee->middle_name      = $data['middle_name'];
@@ -43,6 +46,6 @@ final class ListingController extends BaseController
 
         $branches = Branch::all();
 
-        return \view('office.employee.listing', \compact(['branches', 'roles']));
+        return \view('office.employee.listing', \compact(['branches', 'roles', 'errors']));
     }
 }
