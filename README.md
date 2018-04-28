@@ -1,2 +1,2 @@
-# employee-management-package
+# Employee Management Package
 Artisan Package for Employee Management
