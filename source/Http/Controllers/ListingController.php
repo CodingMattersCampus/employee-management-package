@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace App\Http\Controllers\Office\Employee;
+namespace CodingMatters\EmployeeManagement\Http\Controllers;
 
 use App\Models\User\Employee;
 use App\Models\User\Role;
