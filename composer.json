@@ -11,9 +11,10 @@
     ],
     "require": {
         "php": "~7.2.4",
+        "illuminate/auth": "^5.6",
+        "illuminate/contracts": "^5.6",
         "nesbot/carbon": "^1.27",
-        "roave/security-advisories": "dev-master",
-        "illuminate/contracts": "^5.6"
+        "roave/security-advisories": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.7",
@@ -55,5 +56,10 @@
         "cs-fix": "phpcbf",
         "cpd": "phpcpd --exclude=/vendor --fuzzy source",
         "test": "phpunit --verbose --colors=always"     
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
     }
 }
