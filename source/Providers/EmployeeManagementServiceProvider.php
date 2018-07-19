@@ -22,4 +22,9 @@ final class EmployeeManagementServiceProvider extends ServiceProvider
         ], 'config');
         $this->mergeConfigFrom($configPath, 'app');
     }
+
+    private function packagePath($path)
+    {
+        return __DIR__."/../$path";
+    }
 }
