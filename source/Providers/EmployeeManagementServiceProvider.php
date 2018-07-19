@@ -20,7 +20,7 @@ final class EmployeeManagementServiceProvider extends ServiceProvider
         $this->publishes([
             $configPath => config_path('domain.php'),
         ], 'config');
-        $this->mergeConfigFrom($configPath, 'app');
+        $this->mergeConfigFrom($configPath, 'domain');
     }
 
     private function packagePath($path)

@@ -13,7 +13,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-$domain = \config('app.domain');
+$domain = \config('domain.name');
 Route::group(['domain' => "office.".$domain], function() {
     Route::group(['prefix' => 'settings'], function(){
         Route::group(['prefix' => 'employees', "namespace" => "CodingMatters\EmployeeManagement\Http\Controllers"], function(){
