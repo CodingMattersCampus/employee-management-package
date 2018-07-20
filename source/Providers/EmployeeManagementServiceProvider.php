@@ -15,7 +15,7 @@ final class EmployeeManagementServiceProvider extends ServiceProvider
     public function boot() : void
     {
         $this->loadRoutesFrom(__DIR__ . '/../../routes/office.php');
-        
+
         $configPath = $this->packagePath('config/domain.php');
         $this->publishes([
             $configPath => config_path('domain.php'),
